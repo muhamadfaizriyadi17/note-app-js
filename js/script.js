@@ -34,19 +34,14 @@ function showNotes() {
         let liTag = `<li class="note">
                         <div class="details">
                             <p>${note.title}</p>
-                            <span>${filterDesc}</span>
+                            <span class="desc">${filterDesc}</span>
                         </div>
                         <div class="bottom-content">
-                            <span>${note.date}</span>
-                            <div class="settings">
-                                <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
-                                <ul class="menu">
-                                    <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Edit</li>
-                                    <li onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Delete</li>
-                                </ul>
-                            </div>
+                            <span class="date">${note.date}</span>
+                            <button class="edit-btn" onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Edit</button>
+                            <button class="delete-btn" onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Delete</button>
                         </div>
-                    </li>`;
+                    </li>` ;
         addBox.insertAdjacentHTML("afterend", liTag);
     });
 }
